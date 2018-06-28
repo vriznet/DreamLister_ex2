@@ -24,6 +24,7 @@
 		9BAED98C20E46A2600BE022C /* ItemType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98420E46A2600BE022C /* ItemType+CoreDataProperties.swift */; };
 		9BAED98F20E4745D00BE022C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98E20E4745D00BE022C /* ItemCell.swift */; };
 		9BAED99120E4B22100BE022C /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED99020E4B22100BE022C /* MaterialView.swift */; };
+		9BAED99320E4CC8A00BE022C /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED99220E4CC8A00BE022C /* ItemDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9BAED98420E46A2600BE022C /* ItemType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BAED98E20E4745D00BE022C /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		9BAED99020E4B22100BE022C /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		9BAED99220E4CC8A00BE022C /* ItemDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,6 @@
 				9BAED97920E469A600BE022C /* View */,
 				9BAED97A20E469AA00BE022C /* Controller */,
 				9BAED96320E3C0BB00BE022C /* AppDelegate.swift */,
-				9BAED96520E3C0BB00BE022C /* MainVC.swift */,
 				9BAED96720E3C0BB00BE022C /* Main.storyboard */,
 				9BAED96D20E3C0BC00BE022C /* Assets.xcassets */,
 				9BAED96F20E3C0BC00BE022C /* LaunchScreen.storyboard */,
@@ -117,6 +118,8 @@
 		9BAED97A20E469AA00BE022C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9BAED96520E3C0BB00BE022C /* MainVC.swift */,
+				9BAED99220E4CC8A00BE022C /* ItemDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				9BAED98920E46A2600BE022C /* Item+CoreDataClass.swift in Sources */,
 				9BAED98A20E46A2600BE022C /* Item+CoreDataProperties.swift in Sources */,
 				9BAED96620E3C0BB00BE022C /* MainVC.swift in Sources */,
+				9BAED99320E4CC8A00BE022C /* ItemDetailsVC.swift in Sources */,
 				9BAED98620E46A2600BE022C /* Image+CoreDataProperties.swift in Sources */,
 				9BAED98C20E46A2600BE022C /* ItemType+CoreDataProperties.swift in Sources */,
 				9BAED96420E3C0BB00BE022C /* AppDelegate.swift in Sources */,
