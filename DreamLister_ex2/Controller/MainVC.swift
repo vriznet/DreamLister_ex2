@@ -19,7 +19,6 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        generateTestData()
         attemptFetch()
 
         tableView.delegate = self
@@ -94,6 +93,7 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewD
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         fetchReqeust.sortDescriptors = [dateSort]
         let controller = NSFetchedResultsController(fetchRequest: fetchReqeust, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        controller.delegate = self
         self.controller = controller
         do{
             try controller.performFetch()
@@ -105,15 +105,5 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewD
     func configureCell(cell: ItemCell, indexPath: IndexPath){
         let item = controller.object(at: indexPath)
         cell.configureCell(item: item)
-    }
-    func generateTestData(){
-        let item1 = Item(context: context)
-        item1.title = "Macbook Pro"
-        item1.price = 1599.0
-        item1.details = "Yeah"
-        let item2 = Item(context: context)
-        item2.title = "Macbook Amateur"
-        item2.price = 3.0
-        item2.details = "Woo"
     }
 }

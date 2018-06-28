@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var titleField: CustomTextField!
     @IBOutlet weak var priceField: CustomTextField!
     @IBOutlet weak var detailsField: CustomTextField!
@@ -91,6 +91,21 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
+        let item = Item(context:context)
+        if let title = titleField.text{
+            item.title = title
+        }
+        if let price = priceField.text{
+            item.price = (price as NSString).doubleValue
+        }
+        if let details = detailsField.text{
+            item.details = details
+        }
+        
+        item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
+        item.toItemType = types[typePicker.selectedRow(inComponent: 0)]
+        ad.saveContext()
+        navigationController?.popViewController(animated: true)
     }
     @IBAction func deletePressed(_ sender: UIBarButtonItem) {
     }
