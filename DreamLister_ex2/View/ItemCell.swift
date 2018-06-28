@@ -9,5 +9,14 @@
 import UIKit
 
 class ItemCell: UITableViewCell {
+    @IBOutlet weak var thumbImg: UIImageView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var detailsLbl: UILabel!
     
+    func configureCell(item: Item){
+        titleLbl.text = item.title
+        priceLbl.text = "$\(item.price)"
+        detailsLbl.text = item.details
+    }
 }
