@@ -22,6 +22,7 @@
 		9BAED98A20E46A2600BE022C /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98220E46A2600BE022C /* Item+CoreDataProperties.swift */; };
 		9BAED98B20E46A2600BE022C /* ItemType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98320E46A2600BE022C /* ItemType+CoreDataClass.swift */; };
 		9BAED98C20E46A2600BE022C /* ItemType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98420E46A2600BE022C /* ItemType+CoreDataProperties.swift */; };
+		9BAED98F20E4745D00BE022C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98E20E4745D00BE022C /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		9BAED98220E46A2600BE022C /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BAED98320E46A2600BE022C /* ItemType+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemType+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BAED98420E46A2600BE022C /* ItemType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BAED98E20E4745D00BE022C /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				9BAED97B20E469C100BE022C /* CustomTextField.swift */,
+				9BAED98E20E4745D00BE022C /* ItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BAED98F20E4745D00BE022C /* ItemCell.swift in Sources */,
 				9BAED98B20E46A2600BE022C /* ItemType+CoreDataClass.swift in Sources */,
 				9BAED97C20E469C100BE022C /* CustomTextField.swift in Sources */,
 				9BAED98820E46A2600BE022C /* Store+CoreDataProperties.swift in Sources */,
