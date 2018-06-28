@@ -167,6 +167,9 @@
                                     <constraint firstAttribute="height" constant="68" id="4ka-QL-fx3"/>
                                     <constraint firstAttribute="width" constant="68" id="ZLH-TO-249"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="hxG-Is-3KT" eventType="touchUpInside" id="GGc-Mi-b2l"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="07A-PI-bjZ" customClass="CustomTextField" customModule="DreamLister_ex2" customModuleProvider="target">
                                 <rect key="frame" x="93" y="74" width="212" height="30"/>
@@ -237,6 +240,9 @@
                                 <state key="normal" title="Save Item">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="hxG-Is-3KT" eventType="touchUpInside" id="EfT-1D-JkY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -273,8 +279,20 @@
                         <viewLayoutGuide key="safeArea" id="0Xh-eP-Amb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add/Edit" id="Abk-Gs-ooy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ZyI-U0-xrH"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ZyI-U0-xrH">
+                            <connections>
+                                <action selector="deletePressed:" destination="hxG-Is-3KT" id="wGx-Md-KIX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailsField" destination="DTk-QM-niz" id="JCt-Xh-yCU"/>
+                        <outlet property="priceField" destination="EOC-FX-QqG" id="AFp-8t-r2Y"/>
+                        <outlet property="storePicker" destination="d5Q-sw-AQw" id="dAV-98-hMJ"/>
+                        <outlet property="thumbImg" destination="Prg-X7-oRl" id="BVe-cB-opc"/>
+                        <outlet property="titleField" destination="07A-PI-bjZ" id="01H-Sn-K3V"/>
+                        <outlet property="typePicker" destination="fvZ-AV-jqi" id="a1h-o3-4Fo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qfb-YZ-IZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
