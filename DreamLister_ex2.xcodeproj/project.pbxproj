@@ -14,6 +14,14 @@
 		9BAED96E20E3C0BC00BE022C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BAED96D20E3C0BC00BE022C /* Assets.xcassets */; };
 		9BAED97120E3C0BC00BE022C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BAED96F20E3C0BC00BE022C /* LaunchScreen.storyboard */; };
 		9BAED97C20E469C100BE022C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED97B20E469C100BE022C /* CustomTextField.swift */; };
+		9BAED98520E46A2600BE022C /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED97D20E46A2600BE022C /* Image+CoreDataClass.swift */; };
+		9BAED98620E46A2600BE022C /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED97E20E46A2600BE022C /* Image+CoreDataProperties.swift */; };
+		9BAED98720E46A2600BE022C /* Store+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED97F20E46A2600BE022C /* Store+CoreDataClass.swift */; };
+		9BAED98820E46A2600BE022C /* Store+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98020E46A2600BE022C /* Store+CoreDataProperties.swift */; };
+		9BAED98920E46A2600BE022C /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98120E46A2600BE022C /* Item+CoreDataClass.swift */; };
+		9BAED98A20E46A2600BE022C /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98220E46A2600BE022C /* Item+CoreDataProperties.swift */; };
+		9BAED98B20E46A2600BE022C /* ItemType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98320E46A2600BE022C /* ItemType+CoreDataClass.swift */; };
+		9BAED98C20E46A2600BE022C /* ItemType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAED98420E46A2600BE022C /* ItemType+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		9BAED97020E3C0BC00BE022C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BAED97220E3C0BC00BE022C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BAED97B20E469C100BE022C /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		9BAED97D20E46A2600BE022C /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BAED97E20E46A2600BE022C /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BAED97F20E46A2600BE022C /* Store+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BAED98020E46A2600BE022C /* Store+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BAED98120E46A2600BE022C /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BAED98220E46A2600BE022C /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BAED98320E46A2600BE022C /* ItemType+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemType+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BAED98420E46A2600BE022C /* ItemType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +91,11 @@
 		9BAED97820E469A000BE022C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9BAED97D20E46A2600BE022C /* Image+CoreDataClass.swift */,
+				9BAED97F20E46A2600BE022C /* Store+CoreDataClass.swift */,
+				9BAED98120E46A2600BE022C /* Item+CoreDataClass.swift */,
+				9BAED98320E46A2600BE022C /* ItemType+CoreDataClass.swift */,
+				9BAED98D20E46A4300BE022C /* Generated */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -92,6 +113,17 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9BAED98D20E46A4300BE022C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				9BAED97E20E46A2600BE022C /* Image+CoreDataProperties.swift */,
+				9BAED98020E46A2600BE022C /* Store+CoreDataProperties.swift */,
+				9BAED98220E46A2600BE022C /* Item+CoreDataProperties.swift */,
+				9BAED98420E46A2600BE022C /* ItemType+CoreDataProperties.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +197,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BAED98B20E46A2600BE022C /* ItemType+CoreDataClass.swift in Sources */,
 				9BAED97C20E469C100BE022C /* CustomTextField.swift in Sources */,
+				9BAED98820E46A2600BE022C /* Store+CoreDataProperties.swift in Sources */,
 				9BAED96C20E3C0BB00BE022C /* DreamLister_ex2.xcdatamodeld in Sources */,
+				9BAED98920E46A2600BE022C /* Item+CoreDataClass.swift in Sources */,
+				9BAED98A20E46A2600BE022C /* Item+CoreDataProperties.swift in Sources */,
 				9BAED96620E3C0BB00BE022C /* ViewController.swift in Sources */,
+				9BAED98620E46A2600BE022C /* Image+CoreDataProperties.swift in Sources */,
+				9BAED98C20E46A2600BE022C /* ItemType+CoreDataProperties.swift in Sources */,
 				9BAED96420E3C0BB00BE022C /* AppDelegate.swift in Sources */,
+				9BAED98720E46A2600BE022C /* Store+CoreDataClass.swift in Sources */,
+				9BAED98520E46A2600BE022C /* Image+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
