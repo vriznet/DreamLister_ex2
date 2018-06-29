@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource{
+class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     // IBOutlet
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -106,7 +106,16 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewD
     func attemptFetch(){
         let fetchReqeust: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
-        fetchReqeust.sortDescriptors = [dateSort]
+        let priceSort = NSSortDescriptor(key: "price", ascending: true)
+        let titleSort = NSSortDescriptor(key: "title", ascending: true)
+        
+        if segment.selectedSegmentIndex == 0{
+            fetchReqeust.sortDescriptors = [dateSort]
+        }else if segment.selectedSegmentIndex == 1{
+            fetchReqeust.sortDescriptors = [priceSort]
+        }else if segment.selectedSegmentIndex == 2{
+            fetchReqeust.sortDescriptors = [titleSort]
+        }
         let controller = NSFetchedResultsController(fetchRequest: fetchReqeust, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         controller.delegate = self
         self.controller = controller
@@ -121,4 +130,11 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewD
         let item = controller.object(at: indexPath)
         cell.configureCell(item: item)
     }
+    
+    //IBAction
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        attemptFetch()
+        tableView.reloadData()
+    }
+    
 }
