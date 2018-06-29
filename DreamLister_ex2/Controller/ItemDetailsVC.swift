@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate {
+class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet weak var titleField: CustomTextField!
     @IBOutlet weak var priceField: CustomTextField!
     @IBOutlet weak var detailsField: CustomTextField!
@@ -21,6 +21,7 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
     var stores = [Store]()
     var types = [ItemType]()
     var itemToEdit: Item!
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,9 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
         storePicker.dataSource = self
         typePicker.delegate = self
         typePicker.dataSource = self
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
 //        let store1 = Store(context: context)
 //        store1.name = "Amazon"
 //        let store2 = Store(context: context)
@@ -76,6 +80,13 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
         // update later
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            thumbImg.image = img
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
     func getStores(){
         let fetchRequest: NSFetchRequest<Store> = Store.fetchRequest()
         do{
@@ -96,6 +107,7 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
     }
     func loadItemData(){
         if let item = itemToEdit{
+            thumbImg.image = item.toImage?.image as? UIImage
             titleField.text = item.title
             priceField.text = "\(item.price)"
             detailsField.text = item.details
@@ -126,11 +138,14 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
     
     @IBAction func savePressed(_ sender: UIButton) {
         var item: Item!
+        let picture = Image(context: context)
+        picture.image = thumbImg.image
         if itemToEdit != nil{
             item = itemToEdit
         }else{
             item = Item(context:context)
         }
+        item.toImage = picture
         if let title = titleField.text{
             item.title = title
         }
@@ -143,6 +158,7 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
         
         item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
         item.toItemType = types[typePicker.selectedRow(inComponent: 0)]
+        
         ad.saveContext()
         navigationController?.popViewController(animated: true)
     }
@@ -154,5 +170,6 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
         navigationController?.popViewController(animated: true)
     }
     @IBAction func addImage(_ sender: UIButton) {
+        present(imagePicker, animated: true, completion: nil)
     }
 }
