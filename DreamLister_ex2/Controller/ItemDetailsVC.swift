@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate, UIImagePickerControllerDelegate {
+class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var titleField: CustomTextField!
     @IBOutlet weak var priceField: CustomTextField!
     @IBOutlet weak var detailsField: CustomTextField!
@@ -23,6 +23,10 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
     var itemToEdit: Item!
     var imagePicker: UIImagePickerController!
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let topItem = navigationController?.navigationBar.topItem{
@@ -35,6 +39,10 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
         
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        
+        titleField.delegate = self
+        priceField.delegate = self
+        detailsField.delegate = self
 //        let store1 = Store(context: context)
 //        store1.name = "Amazon"
 //        let store2 = Store(context: context)
@@ -85,6 +93,13 @@ class ItemDetailsVC: UIViewController, UINavigationControllerDelegate, UIPickerV
             thumbImg.image = img
         }
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleField.resignFirstResponder()
+        priceField.resignFirstResponder()
+        detailsField.resignFirstResponder()
+        return true
     }
     
     func getStores(){
